@@ -1,0 +1,128 @@
+.home-container {
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .content {
+    text-align: center;
+    z-index: 2;
+  }
+  
+  .glitch-text {
+    font-family: 'Fira Code', monospace;
+    font-size: 4em;
+    color: #0f0;
+    text-shadow: 0 0 5px #0f0;
+    position: relative;
+    animation: glitch 3s infinite;
+  }
+  
+  .subtitle {
+    font-family: 'Fira Code', monospace;
+    color: #0f0;
+    font-size: 1.5em;
+    margin: 20px 0;
+    opacity: 0;
+    animation: typewriter 2s steps(20) 1s forwards;
+  }
+  
+  .start-button {
+    background: transparent;
+    border: 2px solid #0f0;
+    color: #0f0;
+    padding: 15px 40px;
+    font-size: 1.5em;
+    font-family: 'Fira Code', monospace;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  
+  .start-button:hover {
+    background: #0f0;
+    color: #000;
+    box-shadow: 0 0 20px #0f0;
+  }
+  
+  .button-glitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0f0;
+    opacity: 0;
+    mix-blend-mode: screen;
+    animation: buttonGlitch 4s infinite;
+  }
+  
+  .matrix-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(
+        rgba(0, 255, 0, 0.03) 2px,
+        transparent 2px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(0, 255, 0, 0.03) 2px,
+        transparent 2px
+      ),
+      #000;
+    background-size: 50px 50px;
+    animation: matrixScroll 20s linear infinite;
+  }
+  
+  .crt-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      transparent 50%,
+      rgba(0, 255, 0, 0.05) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 3;
+    pointer-events: none;
+  }
+  
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+  }
+  
+  @keyframes typewriter {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes buttonGlitch {
+    0% { opacity: 0; }
+    2% { opacity: 0.1; }
+    4% { opacity: 0; }
+    90% { opacity: 0; }
+    92% { opacity: 0.1; }
+    94% { opacity: 0; }
+  }
+  
+  @keyframes matrixScroll {
+    from { background-position: 0 0; }
+    to { background-position: 0 1000px; }
+  }
